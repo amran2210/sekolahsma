@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profil Sekolah</title>
+    <style>
+        /* Reset dasar untuk menghindari margin dan padding yang tidak diinginkan */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body dan font dasar */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        /* Navigasi */
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Gambar Sekolah */
+        .school-image {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        /* Konten utama */
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #007bff;
+        }
+
+        .about-school {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .about-school .text, .about-school .image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-school .text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-school .image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Media Queries untuk responsivitas */
+        @media (max-width: 768px) {
+            .about-school {
+                flex-direction: column;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Selamat Datang di Profil Sekolah Kami</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">Tentang Sekolah</a></li>
+            <li><a href="#facilities">Fasilitas</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <div class="section-title">
+                <h2>Tentang Sekolah</h2>
+            </div>
+            <div class="about-school">
+                <div class="text">
+                    <p>Sekolah XYZ adalah lembaga pendidikan yang berkomitmen untuk menyediakan pendidikan berkualitas tinggi bagi anak-anak. Dengan fasilitas lengkap dan pengajaran yang inovatif, kami berusaha untuk membentuk karakter siswa yang unggul dan berwawasan luas. Kami juga mendukung pengembangan potensi siswa di luar akademik.</p>
+                </div>
+                <div class="image">
+                    <img src="https://via.placeholder.com/600x400" alt="Sekolah XYZ" class="school-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="facilities">
+            <div class="section-title">
+                <h2>Fasilitas Sekolah</h2>
+            </div>
+            <div class="about-school">
+                <div class="text">
+                    <p>Sekolah XYZ dilengkapi dengan fasilitas modern, seperti ruang kelas yang nyaman, laboratorium sains, ruang olahraga, perpustakaan, dan area bermain. Kami juga memiliki program ekstrakurikuler yang beragam untuk mendukung bakat dan minat siswa.</p>
+                </div>
+                <div class="image">
+                    <img src="https://via.placeholder.com/600x400" alt="Fasilitas Sekolah" class="school-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-title">
+                <h2>Kontak Kami</h2>
+            </div>
+            <p>Jika Anda tertarik untuk bergabung atau ingin mengetahui lebih lanjut, silakan hubungi kami di:</p>
+            <ul>
+                <li>Email: info@sekolahxyz.com</li>
+                <li>Telepon: (021) 123-4567</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sekolah XYZ. Semua hak cipta dilindungi.</p>
+    </footer>
+
+</body>
+</html>

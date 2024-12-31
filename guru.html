@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Daftar Guru Berdasarkan Mata Pelajaran</title>
+    <style>
+        /* Reset dan layout dasar */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        /* Header */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Container utama */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Grid responsif untuk kartu guru */
+        .guru-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .guru-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .guru-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .guru-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .guru-card h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .guru-card p {
+            font-size: 1em;
+            color: #777;
+        }
+
+        /* Filter berdasarkan mata pelajaran */
+        .filter {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter select {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Daftar Guru Berdasarkan Mata Pelajaran</h1>
+</header>
+
+<div class="container">
+    <div class="filter">
+        <label for="mata-pelajaran">Pilih Mata Pelajaran:</label>
+        <select id="mata-pelajaran" onchange="filterGuru()">
+            <option value="all">Semua Mata Pelajaran</option>
+            <option value="matematika">Matematika</option>
+            <option value="bahasa-indonesia">Bahasa Indonesia</option>
+            <option value="ipa">IPA</option>
+            <option value="ips">IPS</option>
+            <option value="bahasa-inggris">Bahasa Inggris</option>
+        </select>
+    </div>
+
+    <div class="guru-list" id="guru-list">
+        <!-- Kartu Guru 1 -->
+        <div class="guru-card" data-mata-pelajaran="matematika">
+            <img src="https://via.placeholder.com/100" alt="Foto Guru">
+            <h3>GURU A</h3>
+            <p>Guru Matematika</p>
+        </div>
+        <!-- Kartu Guru 2 -->
+        <div class="guru-card" data-mata-pelajaran="bahasa-indonesia">
+            <img src="https://via.placeholder.com/100" alt="Foto Guru">
+            <h3>GURU B</h3>
+            <p>Guru Bahasa Indonesia</p>
+        </div>
+        <!-- Kartu Guru 3 -->
+        <div class="guru-card" data-mata-pelajaran="ipa">
+            <img src="https://via.placeholder.com/100" alt="Foto Guru">
+            <h3>GURU C</h3>
+            <p>Guru IPA</p>
+        </div>
+        <!-- Kartu Guru 4 -->
+        <div class="guru-card" data-mata-pelajaran="ips">
+            <img src="https://via.placeholder.com/100" alt="Foto Guru">
+            <h3>GURU D</h3>
+            <p>Guru IPS</p>
+        </div>
+        <!-- Kartu Guru 5 -->
+        <div class="guru-card" data-mata-pelajaran="bahasa-inggris">
+            <img src="https://via.placeholder.com/100" alt="Foto Guru">
+            <h3>GURU E</h3>
+            <p>Guru Bahasa Inggris</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function filterGuru() {
+        const mataPelajaran = document.getElementById('mata-pelajaran').value;
+        const guruCards = document.querySelectorAll('.guru-card');
+        
+        guruCards.forEach(card => {
+            if (mataPelajaran === 'all' || card.getAttribute('data-mata-pelajaran') === mataPelajaran) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
